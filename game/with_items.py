@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from object import Object
+from .object import Object
 
 
 @dataclass

@@ -1,7 +1,6 @@
 import re
-from color import green, purple, red
-from item import get_item_desc, item_toy
-
+from .color import green, purple, red
+from .item import get_item_desc, item_toy
 
 ACT_LOOK = 'LOOK'
 ACT_GO = 'GO'
@@ -20,8 +19,7 @@ def action_help():
     print(f'{red(ACT_GO)} '
           f'[{purple(valid_directions)}] '
           f'{green('$ Move in that direction (ex. go ')}'
-          f'{purple('NORTH')}'
-          )
+          f'{purple('NORTH')}')
 
     print(f'{red(ACT_GET)} '
           f'[{red('item')}] '

@@ -1,5 +1,5 @@
 from textwrap import wrap
-from color import red, purple
+from .color import red, purple
 
 
 class Object:

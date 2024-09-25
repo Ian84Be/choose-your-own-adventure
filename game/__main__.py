@@ -1,9 +1,9 @@
-from actions import handle_user_input
-from color import green
-from game import Game
-from player import Player
-from location import game_locations
-from with_items import ObjectWithItems
+from .actions import handle_user_input
+from .color import green
+from .game import Game
+from .player import Player
+from .location import game_locations
+from .with_items import ObjectWithItems
 
 new_player = Player(ObjectWithItems('Ricky'), game_locations['start'])
 game = Game(new_player)
@@ -16,6 +16,7 @@ while True:
     game.player.show_items()
 
     # await user input
-    action = input(f'{green('$ Action: ')}').strip()
+    action = input(f'{green('$ Action: ')}')
+    action.strip()
     if action:
         handle_user_input(game, action)

@@ -1,9 +1,9 @@
 import sys
 import time
 from textwrap import wrap
-from actions import ACT_GET, ACT_GO, ACT_LOOK, handle_action
-from color import purple, red
-from item import item_toy
+from .actions import ACT_GET, ACT_GO, ACT_LOOK, handle_action
+from .color import purple, red
+from .item import item_toy
 
 
 def crawl_text(text, delay=0.01):
@@ -11,7 +11,7 @@ def crawl_text(text, delay=0.01):
     text = '\n\r'.join(text)
     for ln in text:
         print(ln, end='', flush=True)
-        time.sleep(delay)
+        # time.sleep(delay)
     print('\n')
 
 

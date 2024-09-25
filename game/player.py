@@ -1,5 +1,5 @@
-from color import red
-from with_items import ObjectWithItems, WithItems
+from .color import red
+from .with_items import ObjectWithItems, WithItems
 
 
 class Player(WithItems):

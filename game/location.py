@@ -1,8 +1,8 @@
 from dataclasses import dataclass
-from color import red, purple
-from game import crawl_text
-from with_items import ObjectWithItems, WithItems
-from item import item_key, item_toy, item_flashlight, item_napkin
+from .color import red, purple
+from .game import crawl_text
+from .with_items import ObjectWithItems, WithItems
+from .item import item_key, item_toy, item_flashlight, item_napkin
 
 
 class Location(WithItems):

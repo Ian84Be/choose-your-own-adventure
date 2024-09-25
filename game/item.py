@@ -1,5 +1,5 @@
-from color import red
-from object import Object
+from .color import red
+from .object import Object
 
 
 class Item(Object):
