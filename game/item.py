@@ -22,7 +22,7 @@ item_napkin = Item('NAPKIN', napkin_desc)
 item_key = Item(
     'KEY', 'An unusally large, metal key. Feels warm to the touch.')
 item_toy = Item(
-    'TOY', 'A well loved toy. Bright yellow, dripping with dog slobber.')
+    'TOY', 'A rubber duck. Bright yellow, dripping with dog slobber.')
 
 game_items = [item_key, item_toy, item_flashlight, item_napkin]
 item_names = [item.name for item in game_items]

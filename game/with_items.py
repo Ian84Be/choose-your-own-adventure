@@ -23,7 +23,7 @@ class WithItems(Object):
     def show_items_text(self):
         my_items = self.get_item_names()
         if not my_items:
-            my_items = 'nothing'
+            my_items = None
         return my_items
 
     def find_item(self, subject):

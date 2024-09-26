@@ -1,6 +1,6 @@
 import re
 from .color import green, purple, red
-from .item import get_item_desc, item_toy
+from .item import get_item_desc
 
 ACT_LOOK = 'LOOK'
 ACT_GO = 'GO'
@@ -77,18 +77,20 @@ def handle_action(game, verb, subject):
         print(item_not_found_message)
 
     direction_not_found = verb == ACT_GO and has_subject and subject not in valid_directions
-    direction_not_found_message = (f'GO {red(subject)}? Not possible.'
-                                   'Please GO in a valid direction.')
+    direction_not_found_message = (f'GO {red(subject)}?\nNot possible.'
+                                   'Please GO in a valid direction.\n')
     if direction_not_found:
         print(direction_not_found_message)
         print(valid_directions)
+        return
 
     if verb != ACT_LOOK and not has_subject:
         print(do_nothing_message(verb))
+        return
 
     if verb == ACT_LOOK:
         if not has_subject:
-            print(player.loc)
+            player.loc.act_look()
         elif subject == 'SELF':
             print(str(player))
         elif item_found:
@@ -97,8 +99,6 @@ def handle_action(game, verb, subject):
     if verb == ACT_GET:
         if loc_has_item:
             player.loc.act_get(player, subject)
-            if subject == item_toy.name:
-                game.rubber_duck_death()
 
     if verb == ACT_DROP:
         if player_has_item:

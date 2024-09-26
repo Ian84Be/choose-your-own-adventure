@@ -1,4 +1,5 @@
-from .color import red
+from game.game import crawl_text
+from .color import green, purple, red
 from .with_items import ObjectWithItems, WithItems
 
 
@@ -11,17 +12,19 @@ class Player(WithItems):
         return f'++ {self.name} is at the {self.loc.name} ++'
 
     def show_items(self):
-        print(f'You are holding {red(self.show_items_text())}\n')
+        if self.holding:
+            crawl_text(f'You are holding {red(self.show_items_text())}\n')
 
     def act_get(self, item):
-        print(f'You pick up the {red(item.name)}')
+        crawl_text(f'You {green('GET')} the {red(item.name)}\n', 0.05)
+        crawl_text(f'{purple(item.desc)}', 0.03)
         if self.holding:
             self.holding.append(item)
         else:
             self.holding = [item]
 
     def act_drop(self, subject):
-        print(f'You dropped the {red(subject)}')
+        crawl_text(f'You {green('DROP')} the {red(subject)}', 0.05)
         item_names = self.get_item_names()
         if item_names:
             index = item_names.index(subject)
